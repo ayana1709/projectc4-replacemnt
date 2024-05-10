@@ -18,3 +18,4 @@ Route::get('/', [AuthController::class, 'index']);
 Route::get('forgot-password',[Authcontroller::class, 'forgot_password']);
 Route::get('register', [AuthController::class, 'register']);
 Route::post('registe_post',[AuthController::class, 'registe_post']);
+Route::post('checkemail',[AuthController::class, 'CheackEmail']);  
