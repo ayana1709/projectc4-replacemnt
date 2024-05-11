@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\User; 
 use Illuminate\Support\Facades\Hash;
 use Str;   
 use Auth;
@@ -60,11 +60,13 @@ public function CheckEmail(Request $request){
 }
 public function login_post(Request $request){
 
-   if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password], true)){
+   if(Auth::attempt(['email' => $request->email, 'password' => $request->password], true)){
        if( Auth::User()->is_role == '1'){
-    return redirect()->intended('admin/dashboard');
-       }else{
-    return redirect('/')->with('error','no HR Available ... please cheack ');  
+return redirect()->intended 
+              ('admin/dashboard');
+        }else{
+          return redirect('/')->with('error','no 
+          HR Available ... please cheack ');  
        }
 
    }
