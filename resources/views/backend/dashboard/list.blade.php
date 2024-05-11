@@ -672,7 +672,7 @@
               </li>
               <li class="nav-item">
                 <a href="pages/examples/lockscreen.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-circle nav-icon"></i>a9e7c8db
                   <p>Lockscreen</p>
                 </a>
               </li>
