@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HR | Dashboard</title>
+  <title> HRMS| Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -12,7 +12,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="{{ url('public/backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ url('public/backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
@@ -672,7 +672,7 @@
               </li>
               <li class="nav-item">
                 <a href="pages/examples/lockscreen.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>a9e7c8db
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Lockscreen</p>
                 </a>
               </li>
@@ -1080,7 +1080,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="{{ url('public/backend/dist/img/user7-128x128.jpg')}}" alt="User Avatar">
+                        <img class="contacts-list-img" src="{{ ('dist/img/user7-128x128.jpg')}}" alt="User Avatar">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -1095,7 +1095,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="{{ url('public/backend/dist/img/user3-128x128.jpg')}}" alt="User Avatar">
+                        <img class="contacts-list-img" src="{{ url('public/backend/dist/img/user3-128x128.jpg')}}" alt="User Avatar"> 
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -1453,7 +1453,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2034 <a href="https://adminlte.io">HRms</a>.</strong>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.2.0
@@ -1469,7 +1469,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{ url('public/backend/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ url('public/backend/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -1484,10 +1484,23 @@
 <script src="{{ url('public/backend/plugins/sparklines/sparkline.js')}}"></script>
 <!-- JQVMap -->
 <script src="{{ url('public/backend/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{ url('public/backend/plugins/jqvmap/maps/jquery.vmap.usa.js)}}"></script>
+<script src="{{ url('public/backend/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 <!-- jQuery Knob Chart -->
-
-
-
+<script src="{{ url('public/backend/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+<!-- daterangepicker -->
+<script src="{{ url('public/backend/plugins/moment/moment.min.js')}}"></script>
+<script src="{{ url('public/backend/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ url('public/backend/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- Summernote -->
+<script src="{{ url('public/backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{ url('public/backend/plugins/overlayScrollbsars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{ url('public/backend/dist/js/adminlte.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ url('public/backend/dist/js/demo.js')}}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ url('public/backend/dist/js/pages/dashboard.js')}}"></script>
 </body>
 </html>
