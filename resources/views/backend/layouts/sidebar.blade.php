@@ -13,19 +13,17 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+     
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
+        <a class="nav-link"   href="{{ url('logout')}}" >
+          <i class="fas fa-sign-out-alt"></i>
         </a>
        
       </li>
@@ -40,7 +38,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ url('public/backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">HR</span>
+      <span class="brand-text font-weight-light">HRMS</span>
     </a>
 
     <!-- Sidebar -->
@@ -51,7 +49,7 @@
           <img src="{{ url('public/backend/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Ayana B</a>
+          <a href="#" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -68,11 +66,50 @@
                 <i class="nav-icon fa fa-home"></i>
                 <p>Dashboard</p>
             </a>
-
+        </li> 
+        
+        <li class="nav-item">
+            <a href="{{url('admin/employees')}}" class="nav-link ">
+                <i class="nav-icon fa fa-users"></i>
+                <p>Employees</p>
+            </a>
         </li>
-        
+
+        <li class="nav-item">
+            <a href="{{url('admin/jobs')}}" class="nav-link ">
+                <i class="nav-icon fa fa-briefcase"></i>
+                <p>Jobs</p>
+            </a>
+        </li>
           
-        
+        <li class="nav-item">
+            <a href="{{url('admin/job_history')}}" class="nav-link ">
+                <i class="nav-icon fa fa-history"></i>
+                <p>Job History</p>
+            </a>
+        </li>
+
+
+             
+        <li class="nav-item">
+            <a href="{{url('admin/job_grades')}}" class="nav-link ">
+                <i class="nav-icon fa fa-star"></i>
+                <p>Job Grades</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{{url('admin/locations')}}" class="nav-link ">
+                <i class="nav-icon fa fa-map-marker-alt"></i>
+                <p>Location</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url('admin/regions')}}" class="nav-link ">
+                <i class="nav-icon fa fa-asterisk"></i>
+                <p>Regions</p>
+            </a>
+        </li>
            
           
         </ul>

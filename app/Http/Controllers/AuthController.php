@@ -76,6 +76,15 @@ else{
 }
 
 
-}}
+}
+
+
+public function logout(){
+    Auth::logout();
+    return  redirect(url('/'));
+}
+
+
+}
 
 ?>
