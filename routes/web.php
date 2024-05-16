@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController; 
 use App\Http\Controllers\backend\DashboardController; 
-
+use App\Http\Controllers\backend\EmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +28,9 @@ Route::post('login_post', [AuthController::class, 'login_post']);
 //Admin || Hr same name 
 Route::group(['middleware'=>'admin'], function(){
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
+
+
+    Route::get('admin/employees',[EmployeesController::class, 'index']);
 } );   
 
 Route::get('logout',[AuthController::class, 'logout']);
