@@ -31,6 +31,12 @@ Route::group(['middleware'=>'admin'], function(){
 
 
     Route::get('admin/employees',[EmployeesController::class, 'index']);
+    
+    Route::get('admin/employees/add',[EmployeesController::class, 'add']);
 } );   
+
+
+
+
 
 Route::get('logout',[AuthController::class, 'logout']);
