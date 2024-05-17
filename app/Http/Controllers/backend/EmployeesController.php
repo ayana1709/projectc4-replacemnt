@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class EmployeesController extends Controller{
 
     public function index(Request $request){
-        return('backend.employe.list'); 
+        return view('backend.employees.list'); 
 
 
     } 
@@ -20,6 +20,6 @@ class EmployeesController extends Controller{
 
 }
 
-
+ 
 
 ?>
