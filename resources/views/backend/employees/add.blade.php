@@ -33,7 +33,9 @@
                             Add Employees
                         </h3>
                     </div>
-                        <form class="form-horizontal" method="post" accept="" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="post" accept="{{url(' admin/employees/add')}}" enctype="multipart/form-data">
+
+                     {{csrf_field()}}       
                             <div class="card-body">
                                 <div class="form-group row">
  <label  class="col-sm-2 col-form-lable">
