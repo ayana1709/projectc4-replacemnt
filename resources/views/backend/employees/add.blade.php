@@ -42,7 +42,7 @@
     First Name <span style="color: red;">*</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="name" class="form-control" required placeholder="enter first Name">
+                                        <input type="text" value="{{ old('name')}}" name="name" class="form-control" required placeholder="enter first Name">
                                     </div>
                                 </div>
 
@@ -53,7 +53,7 @@
     Last Name <span style="color: red;"> </span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="last_name" class="form-control"  placeholder="enter last Name">
+                                        <input type="text" name="last_name" value="{{ old('last_name')}}" class="form-control"  placeholder="enter last Name">
                                     </div>
                                 </div>
 
@@ -64,7 +64,8 @@
     Email <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="email" name="email" class="form-control" required placeholder="enter email ">
+                                        <input type="email" value="{{ old('email')}}" name="email" class="form-control" required placeholder="enter email ">
+        <span style="color:red">{{$errors->first('email')}}</span>                                
                                     </div>
                                 </div>
 
@@ -74,7 +75,7 @@
  Phone Number <span style="color: red;"> </span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="Phone_number" class="form-control" required placeholder="enter phone number">
+                                        <input type="text" value="{{ old('Phone_number')}}" name="Phone_number" class="form-control" required placeholder="enter phone number">
                                     </div>
                                 </div>
 
@@ -85,7 +86,7 @@
     Hire Date <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="date" name="hire_date" class="form-control" required placeholder="enter Hire Date">
+                                        <input type="date" value="{{ old('hire_date')}}"name="hire_date" class="form-control" required placeholder="enter Hire Date">
                                     </div>
                                 </div>
 
@@ -119,7 +120,9 @@
     Salary <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="salary" class="form-control" required placeholder="enter salary">
+                                        <input type="number" value="{{ old('salary')}}" name="salary" class="form-control" required placeholder="enter salary">
+                                        <span style="color:red">{{$errors->first('salary')}}</span>                                
+                     
                                     </div>
                                 </div>
 
@@ -128,7 +131,9 @@
     Commission PCT <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="comssion_pct" class="form-control" required placeholder="enter Commission Pct ">
+                                        <input type="number" value="{{ old('comssion_pct')}}" name="comssion_pct" class="form-control" required placeholder="enter Commission Pct ">
+                                        <span style="color:red">{{$errors->first('comssion_pct')}} </span>                                
+                     
                                     </div>
                                 </div>
 

@@ -10,56 +10,94 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Employees</h1>
+            <h1 >Employees</h1>
           </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">List</a></li>
-              <li class="breadcrumb-item active">Employees </li>
-            </ol>
+          <div class="col-sm-6" style="text-align: right;">
+          <a href="{{url('admin/employees/add')}}" class="btn btn-primary">Add Employees </a>
+             
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
 <section class="content">
     <div class="container-fluid">
-        @include('message')
- <a href="{{url('admin/employees/add')}}" class="btn btn-primary">Add Employees </a>
+    
+ 
         <div class="row">
-                <section class="col-lg-12">
+                <section class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-              
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
+                         <h3 class="card-title">Search Employees</h3>
+                         <div>
 
-        
+                         <form method="get" action="">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="form-group col-md-3">
+                                <label>
+                                  First Name
+                                </label>
+                                <input type="text" name="" class="form-control" placeholder="first name">
+                              </div>
 
-        </tr>
-        <tbody>
-            <tr>
-         <td>1</td>
-         <td>Ayana</td>
-         <td>Basha</td>
-         <td>ayana@gmail.com</td>
+                              <div class="form-group col-md-3">
+                                <label>
+                                  Last Name
+                                </label>
+                                <input type="text" name="" class="form-control" placeholder="Last Name">
+                              </div>
 
+                              <div class="form-group col-md-3">
+                                <button class="btn btn-primary" type="submit" style="margin-top:30px;">search</button> 
+                                <a href="{{ url('admin/employees')}}" class="btn btn-success" style="margin-top:30px;">Reset</a>
+                               
+                              </div>
 
-           
-            </tr>
-        </tbody>
-      </thead>
-                            </table>
+                            </div>
+                          </div>
+
+                         </form>
+                       </div>
+                        
+                            
 
                         </div>
 
                     </div>
+    @include('message')
+   <div class="card">
+    <div class="card-header">
+      <h3  class="card-title">Employees list</h3>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            
+
+            
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($getRecord as $value)
+                 <tr>
+                 <td>{{$value->id}}</td>
+                  <td>{{$value->name}}</td>
+                 <td>{{$value->last_name}}</td>
+                  </tr>
+         @endforeach
+        </tbody>
+      </table>
+      <div style="padding:10px; float:right;">
+      pagination
+
+      </div>
+    </div>
+   </div>
 
                 </section>
         </div>
