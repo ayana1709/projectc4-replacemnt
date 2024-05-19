@@ -34,25 +34,31 @@
                          <form method="get" action="">
                           <div class="card-body">
                             <div class="row">
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-1">
                                 <label>
                                   ID
                                 </label>
                                 <input type="number" name="id" class="form-control" value="{{Request()->id}}" placeholder="ID">
 </div>
 
-                              <div class="form-group col-md-3">
+                              <div class="form-group col-md-2">
                                 <label>
                                   First Name
                                 </label>
                                 <input type="text" name="name" value="{{Request()->name}}" class="form-control" placeholder="first name">
                               </div>
 
-                              <div class="form-group col-md-3">
+                              <div class="form-group col-md-2">
                                 <label>
                                   Last Name
                                 </label>
                                 <input type="text" name="last_name" value="{{Request()->last_name}}" class="form-control" placeholder="Last Name">
+                              </div>
+                              <div class="form-group col-md-3">
+                                <label>
+                                  Email ID
+                                </label>
+                                <input type="text" name="email" value="{{Request()->email}}" class="form-control" placeholder="Emai ID">
                               </div>
 
                               <div class="form-group col-md-3">
@@ -96,7 +102,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($getRecord as $value)
+          @forelse($getRecord as $value)
                  <tr>
                  <td>{{$value->id}}</td>
                   <td>{{$value->name}}</td>
@@ -112,7 +118,11 @@
 
 
                   </tr>
-         @endforeach
+         @empty
+         <tr>
+         <td colspan="100%"> No Record Found</td>
+         </tr>
+         @endforelse
         </tbody>
       </table>
       <div style="padding:10px; float:right;">
