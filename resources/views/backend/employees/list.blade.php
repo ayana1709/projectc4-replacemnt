@@ -29,23 +29,30 @@
                     <div class="card">
                         <div class="card-header">
                          <h3 class="card-title">Search Employees</h3>
-                         <div>
+                    </div>
 
                          <form method="get" action="">
                           <div class="card-body">
                             <div class="row">
+                            <div class="form-group col-md-3">
+                                <label>
+                                  ID
+                                </label>
+                                <input type="number" name="id" class="form-control" value="{{Request()->id}}" placeholder="ID">
+</div>
+
                               <div class="form-group col-md-3">
                                 <label>
                                   First Name
                                 </label>
-                                <input type="text" name="" class="form-control" placeholder="first name">
+                                <input type="text" name="name" value="{{Request()->name}}" class="form-control" placeholder="first name">
                               </div>
 
                               <div class="form-group col-md-3">
                                 <label>
                                   Last Name
                                 </label>
-                                <input type="text" name="" class="form-control" placeholder="Last Name">
+                                <input type="text" name="last_name" value="{{Request()->last_name}}" class="form-control" placeholder="Last Name">
                               </div>
 
                               <div class="form-group col-md-3">
@@ -77,6 +84,12 @@
             <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Email</th>
+            <th>IS Role</th>
+            <th>Action</th>
+
+
+
             
 
             
@@ -88,12 +101,22 @@
                  <td>{{$value->id}}</td>
                   <td>{{$value->name}}</td>
                  <td>{{$value->last_name}}</td>
+                 <td>{{$value->email}}</td>
+                 <td>{{!empty($value->is_role)? 'HR': 'employees'}}</td>
+                 <td>{{$value->email}}</td>
+                <td>
+                  <a href="" class="btn btn-info">View</a>
+                  <a href="" class="btn btn-primary">Edit</a>
+                  <a href="" class="btn btn-danger">Delete</a> 
+                </td>
+
+
                   </tr>
          @endforeach
         </tbody>
       </table>
       <div style="padding:10px; float:right;">
-      pagination
+   { !! $getRecord->appends(Illuminate\support\Facades\Request::except('page'))->links() !!}
 
       </div>
     </div>
