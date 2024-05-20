@@ -61,6 +61,12 @@ $user->save();
     }
 
 
+
+
+public function edit($id){
+    return view('backend.employees.edit');
+}
+ 
 }
 
  
