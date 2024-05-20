@@ -74,7 +74,7 @@
         </li>
 
         <li class="nav-item">
-            <a href="{{url('admin/jobs')}}" class="nav-link ">
+            <a href="{{url('admin/jobs')}}" class="nav-link @if(Request::segment(2)=='jobs' active @endif ">
                 <i class="nav-icon fa fa-briefcase"></i>
                 <p>Jobs</p>
             </a>

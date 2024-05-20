@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\backend\DashboardController; 
 use App\Http\Controllers\backend\EmployeesController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\backend\JobsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +41,8 @@ Route::group(['middleware'=>'admin'], function(){
     Route::post('admin/employees/edit/{id}',[EmployeesController::class, 'edit_update']);
     Route::get('admin/employees/delete/{id}',[EmployeesController::class, 'delete']);
 
-
+// Job Start 
+Route::get('admin/jobs',[JobsController::class,'index']);;
   
 } );   
 
