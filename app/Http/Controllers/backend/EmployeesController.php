@@ -55,6 +55,10 @@ $user->save();
 
 
     }
+    public function view($id){
+        $data['getRecord']=User::find($id);
+        return view('backend.employees.view', $data);
+    }
 
 
 }
