@@ -136,7 +136,7 @@
  <label  class="col-sm-2 col-form-lable">
   Created At<span style="color: red;"></span>
                                     </label>
-                                    <div class="col-sm-10">{{$getRecord->created_at }}
+                                    <div class="col-sm-10">{{date('d-m-Y H:i A', strtotime($getRecord->created_at)) }}
                                         
                                     </div>
                                 </div>

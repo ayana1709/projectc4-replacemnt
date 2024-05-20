@@ -12,8 +12,8 @@ use App\Models\JobsModel;
 class JobsController extends Controller{
 
     public function index(Request $request){
-        // $data['getRecord'] = User::getRecord();
-        return view('backend.jobs.list'); 
+        $data['getRecord'] = JobsModel ::getRecord();
+        return view('backend.jobs.list',$data); 
     }
     public function add(){
         return view('backend.jobs.add');  
@@ -33,6 +33,11 @@ class JobsController extends Controller{
          
 $user->save();
         return redirect('admin/jobs')->with('success', 'jobs successfully register. ');
+
+    }
+    public function view($id, Request $request){
+        $data['getRecord'] = JobsModel::find($id);
+        return view('backend.jobs.view', $data);  
 
     }
 }
