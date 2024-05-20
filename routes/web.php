@@ -42,7 +42,10 @@ Route::group(['middleware'=>'admin'], function(){
     Route::get('admin/employees/delete/{id}',[EmployeesController::class, 'delete']);
 
 // Job Start 
-Route::get('admin/jobs',[JobsController::class,'index']);;
+Route::get('admin/jobs',[JobsController::class,'index']);
+Route::get('admin/jobs',[JobsController::class,'index']);
+Route::get('admin/jobs/add', [JobsController::class, 'add']);
+Route::post('admin/jobs/add', [JobsController::class, 'add_post']);
   
 } );   
 

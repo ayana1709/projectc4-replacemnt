@@ -38,7 +38,7 @@
                                 <label>
                                 Job Title
                                 </label>
-                                <input type="number" name="job_title" class="form-control" value="{{Request()->job_title}}" placeholder="ID">
+                                <input type="text" name="job_title" class="form-control" value="{{Request()->job_title}}" placeholder="ID">
 </div>
 <div class="form-group col-md-3">
                                 <label>
@@ -145,4 +145,4 @@
 
 
   </div>
-  @endsection 
+ 
