@@ -33,7 +33,7 @@
                              Edit Employees
                         </h3>
                     </div>
-                        <form class="form-horizontal" method="post" accept="{{url(' admin/employees/add')}}" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="post" action="{{url('admin/employees/edit/'.$getRecord->id )}}" enctype="multipart/form-data">
 
                      {{csrf_field()}}       
                             <div class="card-body">
@@ -42,7 +42,7 @@
     First Name <span style="color: red;">*</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" value="{{ old('name')}}" name="name" class="form-control" required placeholder="enter first Name">
+                                        <input type="text" value="{{ $getRecord->name}}" name="name" class="form-control" required placeholder="enter first Name">
                                     </div>
                                 </div>
 
@@ -53,7 +53,7 @@
     Last Name <span style="color: red;"> </span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="last_name" value="{{ old('last_name')}}" class="form-control"  placeholder="enter last Name">
+                                        <input type="text" name="last_name" value="{{ $getRecord->last_name}}" class="form-control"  placeholder="enter last Name">
                                     </div>
                                 </div>
 
@@ -64,7 +64,7 @@
     Email <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="email" value="{{ old('email')}}" name="email" class="form-control" required placeholder="enter email ">
+                                        <input type="email" value="{{ $getRecord->email}}" name="email" class="form-control" required placeholder="enter email ">
         <span style="color:red">{{$errors->first('email')}}</span>                                
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
  Phone Number <span style="color: red;"> </span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="text" value="{{ old('Phone_number')}}" name="Phone_number" class="form-control" required placeholder="enter phone number">
+                                        <input type="text" value="{{ $getRecord->Phone_number}}" name="Phone_number" class="form-control" required placeholder="enter phone number">
                                     </div>
                                 </div>
 
@@ -86,7 +86,7 @@
     Hire Date <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="date" value="{{ old('hire_date')}}"name="hire_date" class="form-control" required placeholder="enter Hire Date">
+                                        <input type="date" value="{{ $getRecord->hire_date}}"name="hire_date" class="form-control" required placeholder="enter Hire Date">
                                     </div>
                                 </div>
 
@@ -101,10 +101,10 @@
     <option value="">
         select job Title
     </option>
-    <option value="1">
+    <option {{($getRecord->job_id==1)?'selected': ''}} value="1">
         Frontend Developer
     </option>
-    <option value="2">
+    <option {{($getRecord->job_id==2 )?'selected': ''}}value="2">
         Backend Developer
     </option>
     <option value="3">
@@ -120,7 +120,7 @@
     Salary <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="number" value="{{ old('salary')}}" name="salary" class="form-control" required placeholder="enter salary">
+                                        <input type="number" value="{{ $getRecord->salary}}" name="salary" class="form-control" required placeholder="enter salary">
                                         <span style="color:red">{{$errors->first('salary')}}</span>                                
                      
                                     </div>
@@ -131,7 +131,7 @@
     Commission PCT <span style="color: red;"> *</span>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input type="number" value="{{ old('comssion_pct')}}" name="comssion_pct" class="form-control" required placeholder="enter Commission Pct ">
+                                        <input type="number" value="{{  $getRecord->comssion_pct}}" name="comssion_pct" class="form-control" required placeholder="enter Commission Pct ">
                                         <span style="color:red">{{$errors->first('comssion_pct')}} </span>                                
                      
                                     </div>
@@ -148,10 +148,10 @@
     <option value="">
         select manager name
     </option>
-    <option value="1">
+    <option {{($getRecord->manager_id==1)?'selected': ''}} value="1">
         Ayana
     </option>
-    <option value="2">
+    <option {{($getRecord->manager_id==2)?'selected': ''}} value="2">
         naty
     </option>
     <option value="3">
@@ -171,13 +171,16 @@
     <option value="">
         select Department name
     </option>
-    <option value="1">
+    <option 
+    {{($getRecord->departmnet_id ==1)?'selected': ''}} value="1">
         web Development
     </option>
-    <option value="2">
+    <option     {{($getRecord->departmnet_id ==2)?'selected': ''}} 
+value="2">
         mobile developmet 
     </option>
-    <option value="3">
+    <option      {{($getRecord->departmnet_id ==3)?'selected': ''}}
+ value="3">
         Graphics Designing
     </option>
 </select>         

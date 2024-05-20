@@ -64,9 +64,30 @@ $user->save();
 
 
 public function edit($id){
-    return view('backend.employees.edit');
-}
+    $data['getRecord']=User::find($id);
  
+    return view('backend.employees.edit',$data);
+}
+public function edit_update($id, Request $request){
+$user = request()->validate([
+    'email' => 'required|unique:users,email', $id]);
+
+    $user =  User::find($id);
+    $user->name= trim($request->name);
+    $user->last_name =trim($request->last_name);
+    $user->email  = trim($request->email);
+    $user->Phone_number = trim($request->Phone_number);
+    $user->hire_date  = trim($request->hire_date);
+    $user->job_id  = trim($request->job_id);
+    $user->salary  = trim($request->salary);
+    $user->comssion_pct  = trim($request->comssion_pct);
+    $user->manager_id  = trim($request->manager_id);
+    $user->departmnet_id = trim($request->departmnent_id); 
+    $user->is_role = 0; 
+$user->save();
+    return redirect('admin/employees')->with('success', 'Employee successfulley updated. ');
+}
+  
 }
 
  
