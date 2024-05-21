@@ -43,4 +43,51 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    static public function getRecord(){
+        //    $return = self::select('jobs.*')
+        //           ->orderBy('id','desc')
+        //           ->paginate(5);
+        //           return $return;
+    
+           $return = self::select('users.*');
+    
+    
+           // search box start;
+           if(!empty(Request::get('id')))
+            {
+      $return = $return->where('id', '=', Request::get('id'));
+            }
+            if(!empty(Request::get('name'))){
+                $return = $return->where('name', 'like','%'.Request::get('name').'%') ;
+    
+            }
+            if(!empty(Request::get('last_name'))){
+                $return = $return->where('last_name', 'like','%' .Request::get('last_name').'%');
+    
+            }
+            if(!empty(Request::get('email'))){
+                $return = $return->where('email', 'like','%' .Request::get('email').'%');
+    
+            }
+    
+    
+    
+    
+           //search box end
+             $return =  $return->orderBy('id', 'desc')
+                          ->paginate(20);
+                          return $return;
+        }
+
+
+
+
+
+
+
+
+
+
+
 }

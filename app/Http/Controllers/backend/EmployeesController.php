@@ -12,7 +12,7 @@ use App\Models\User;
 class EmployeesController extends Controller{
 
     public function index(Request $request){
-        $data['getRecord'] = User::getRecord();
+        $data['getRecord'] = User ::getRecord();
         return view('backend.employees.list', $data); 
 
 

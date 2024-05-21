@@ -23,7 +23,7 @@ class JobsController extends Controller{
         $user = request()->validate([
             'job_title' => 'required',
             'min_salary' => 'required',
-             'max_salary'=> 'required', 
+            'max_salary'=> 'required', 
              
         ]);
         $user = new JobsModel;
@@ -39,5 +39,10 @@ $user->save();
         $data['getRecord'] = JobsModel::find($id);
         return view('backend.jobs.view', $data);  
 
+    }
+    public function edit($id){
+        $data['getRecord'] = JobsModel::find($id);
+
+       return view('backend.jobs.edit', $data); 
     }
 }
