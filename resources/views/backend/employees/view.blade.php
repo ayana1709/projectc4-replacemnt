@@ -87,7 +87,7 @@
  <label  class="col-sm-2 col-form-lable">
   Job ID<span style="color: red;"></span>
                                     </label>
-                                    <div class="col-sm-10">{{$getRecord->job_id}}
+                                    <div class="col-sm-10">{{ !empty($getRecord->get_job_single->job_title)? $getRecord->get_job_single->job_title : ' '}}
                                         
                                     </div>
                                 </div>

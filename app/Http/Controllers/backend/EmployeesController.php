@@ -82,7 +82,7 @@ public function edit($id){
 //--> edit the fetched data and update  
 public function edit_update($id, Request $request){
 $user = request()->validate([
-    'email' => 'required|unique:users,email', $id]);
+    'email' => 'required', $id]);
 
     $user =  User::find($id);
     $user->name= trim($request->name);
