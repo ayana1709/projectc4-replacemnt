@@ -33,7 +33,7 @@
                             Edit Jobs
                         </h3>
                     </div>
-                        <form class="form-horizontal" method="post" accion="" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="post" action="{{ url('admin/jobs/edit/'.$getRecord->id )}}" enctype="multipart/form-data">
 
                      {{csrf_field()}}       
                             <div class="card-body">
@@ -72,18 +72,24 @@
 
 
 
-
-
-                                
-</div>
+                              
+                                </div>
   <div class="card-footer">
   <a href="{{url('admin/jobs')}}" class="btn btn-default ">Back</a>
     <button type="submit" class="btn btn-primary float-right">
-        Update
+    Update
     </button>
     
-  </div> 
+  </div>
+
+  
+
+                            
+
                         </form>
+
+                        
+
                     </div>
                 </div>
             </div>
