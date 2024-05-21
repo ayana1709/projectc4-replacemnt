@@ -101,15 +101,9 @@
     <option value="">
         select job Title
     </option>
-    <option value="1">
-        Frontend Developer
-    </option>
-    <option value="2">
-        Backend Developer
-    </option>
-    <option value="3">
-        Full-stack Developer 
-    </option>
+    @foreach($getJobs as $value_jobs )
+         <option value="{{$value_jobs->id}}">{{$value_jobs->job_title}}</option>
+    @endforeach 
 </select>         
   </div>
 </div>

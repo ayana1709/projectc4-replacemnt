@@ -98,18 +98,11 @@
                                     </label>
                                     <div class="col-sm-10">
 <select class="form-control" name="job_id" required>
-    <option value="">
-        select job Title
-    </option>
-    <option {{($getRecord->job_id==1)?'selected': ''}} value="1">
-        Frontend Developer
-    </option>
-    <option {{($getRecord->job_id==2 )?'selected': ''}}value="2">
-        Backend Developer
-    </option>
-    <option value="3">
-        Full-stack Developer 
-    </option>
+   
+       
+    @foreach($getJobs as $value_jobs )
+         <option {{($value_jobs->id == $getRecord->job_id) ? 'seleceted' : ''}} value="{{$value_jobs->id}}">{{$value_jobs->job_title}}</option>
+    @endforeach
 </select>         
   </div>
 </div>

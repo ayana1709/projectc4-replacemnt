@@ -5,24 +5,32 @@ namespace App\Http\Controllers\backend;
 use  App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User; 
+use App\Models\JobsModel ; 
+
 
 
 
 // use Elementor\App\Http\Controllers\Controller;
 class EmployeesController extends Controller{
 
+
+
+// employee list
     public function index(Request $request){
         $data['getRecord'] = User ::getRecord();
         return view('backend.employees.list', $data); 
-
-
     } 
 
+
+   // redirecting to  add page 
     public function  add(Request $request){
-     return view('backend.employees.add');
-
-
+        $data['getJobs']= JobsModel::get();
+     return view('backend.employees.add',$data);
     }
+
+
+
+    //adding  employe data from the form
     public function add_post(Request $request){
         //   dd($request->all());
         $user = request()->validate([
@@ -49,12 +57,11 @@ class EmployeesController extends Controller{
         $user->is_role = 0; 
 $user->save();
         return redirect('admin/employees')->with('success', 'Employee successfulley register. ');
-
-        
-
-
-
     }
+
+
+
+    //view
     public function view($id){
         $data['getRecord']=User::find($id);
         return view('backend.employees.view', $data);
@@ -62,12 +69,17 @@ $user->save();
 
 
 
-
+//fetching the data 
 public function edit($id){
     $data['getRecord']=User::find($id);
- 
+    $data['getJobs']= JobsModel::get();
+     
     return view('backend.employees.edit',$data);
 }
+
+
+
+//--> edit the fetched data and update  
 public function edit_update($id, Request $request){
 $user = request()->validate([
     'email' => 'required|unique:users,email', $id]);
@@ -87,13 +99,20 @@ $user = request()->validate([
 $user->save();
     return redirect('admin/employees')->with('success', 'Employee successfulley updated. ');
 }
-  
+
+
+
+
+
+  //--> delete Employe
 public function delete($id){
     $recordDelete = User::find($id);
     $recordDelete->delete();
     return redirect()->back()->with('error','record Successfulley deleted');    
 
 }
+
+
 }
 
  
